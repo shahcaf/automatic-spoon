@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>נושא ביולוגיה - לומדים ביולוגיה</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="topic-title">נושא</h1>
+    <p id="topic-sub">חקירה ולמידה אינטראקטיבית עם חידונים ופאזלים.</p>
+  </header>
+  <main>
+    <nav>
+      <a href="../index.html">חזרה לעמוד הראשי</a>
+    </nav>
+
+    <section class="content">
+      <h2>מבוא קצר</h2>
+      <p id="topic-desc">בדף זה תמצאו פעילות אקראית (חידון או התאמה) שתעזור לכם להעמיק בנושא בצורה מהנה.</p>
+    </section>
+
+    <!-- Random activity will be injected below by activity.js -->
+  </main>
+  <footer>
+    <p>&copy; 2025 כל הזכויות שמורות - לומדים ביולוגיה</p>
+  </footer>
+
+  <script src="../user.js"></script>
+  <script>
+    // Parse query parameter ?topic=slug and set body dataset and titles
+    (function() {
+      const params = new URLSearchParams(location.search);
+      const slug = (params.get('topic') || 'DEFAULT').trim();
+      document.body.setAttribute('data-topic', slug);
+
+      const TITLES = {
+        'anatomy': 'אנטומיה',
+        'physiology': 'פיזיולוגיה',
+        'biochemistry': 'ביוכימיה',
+        'microbiology': 'מיקרוביולוגיה',
+        'immunology': 'אימונולוגיה',
+        'pathology': 'פתולוגיה',
+        'pharmacology': 'פרמקולוגיה',
+        'neuroscience': 'מדעי המוח',
+        'embryology': 'אמבריולוגיה',
+        'histology': 'היסטולוגיה',
+        'endocrinology': 'אנדוקרינולוגיה',
+        'cardiovascular-system': 'מערכת הלב וכלי הדם',
+        'respiratory-system': 'מערכת הנשימה',
+        'renal-system': 'המערכת הכלייתית',
+        'gastrointestinal-system': 'מערכת העיכול',
+        'musculoskeletal-system': 'מערכת השרירים והשלד',
+        'hematology': 'המטולוגיה',
+        'oncology': 'אונקולוגיה',
+        'epidemiology': 'אפידמיולוגיה',
+        'biostatistics': 'ביוסטטיסטיקה',
+        'medical-ethics': 'אתיקה רפואית',
+        'nutrition': 'תזונה',
+        'metabolism': 'מטבוליזם',
+        'enzymes': 'אנזימים',
+        'membranes': 'ממברנות',
+        'cell-signaling': 'איתות תאִי',
+        'cell-cycle': 'מחזור התא',
+        'mitosis-meiosis': 'מיטוזה ומיוזה',
+        'dna-replication': 'שכפול DNA',
+        'transcription': 'תעתוק',
+        'translation': 'תרגום',
+        'protein-structure': 'מבנה חלבונים',
+        'lab-techniques': 'טכניקות מעבדה',
+        'microscopy': 'מיקרוסקופיה',
+        'pcr': 'PCR',
+        'gel-electrophoresis': 'אלקטרופורזה בג׳ל',
+        'chromatography': 'כרומטוגרפיה',
+        'spectroscopy': 'ספקטרוסקופיה',
+        'imaging': 'הדמיה רפואית',
+        'evolution': 'אבולוציה',
+        'ecology': 'אקולוגיה',
+        'taxonomy': 'טקסונומיה',
+        'plant-physiology': 'פיזיולוגיית צמחים',
+        'animal-physiology': 'פיזיולוגיית בעלי חיים',
+        'homeostasis': 'הומאוסטזיס',
+      };
+
+      const title = TITLES[slug] || slug;
+      document.getElementById('topic-title').textContent = title;
+    })();
+  </script>
+  <script src="activity.js"></script>
+</body>
+</html>
